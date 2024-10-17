@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Creado">
+    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Añadidas clases de los modulos + funcionamiento basico de la API">
       <change afterPath="$PROJECT_DIR$/models/APIResponse.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/models/dimensions.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/models/meta.py" afterDir="false" />
@@ -97,11 +97,20 @@
       <option name="project" value="LOCAL" />
       <updated>1729150340293</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Añadidas clases de los modulos + funcionamiento basico de la API">
+      <option name="closed" value="true" />
+      <created>1729154917669</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729154917669</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creado" />
+    <MESSAGE value="Añadidas clases de los modulos + funcionamiento basico de la API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadidas clases de los modulos + funcionamiento basico de la API" />
   </component>
 </project>

@@ -46,8 +46,8 @@ def cargar():
         imagenL.image = imagen_tk
 
         tituloL.config(text=product_list.products[indice].title)
-        categoryL.config(text=product_list.products[indice].category)
-        ratingL.config(text=f"Rating: {product_list.products[indice].rating}")
+        categoryL.config(text=f"Categoria: #{product_list.products[indice].category}")
+        ratingL.config(text=f"Rating: {product_list.products[indice].rating}/5")
         precioDiscount.config(text=f"{product_list.products[indice].price}, (Discount: {product_list.products[indice].discountPercentage})")
         stockL.config(text=f"Stock: {product_list.products[indice].stock}")
 
@@ -93,13 +93,13 @@ def main():
     desc = tk.Frame(producto1)
     desc.pack(side="left", fill="x")
 
-    tituloL = ttk.Label(producto1, text="1", font=("Sans", 15), justify="left")
+    tituloL = ttk.Label(producto1, text="1", font=("Sans", 25), justify="left")
     tituloL.pack(side="top", anchor="w")
-    categoryL = ttk.Label(producto1, text="1", font=("Sans", 10), justify="left")
+    categoryL = ttk.Label(producto1, text="1", font=("Sans", 20), justify="left")
     categoryL.pack(side="top", anchor="w")
-    ratingL = ttk.Label(producto1, text="1", font=("Sans", 10), justify="left")
+    ratingL = ttk.Label(producto1, text="1", font=("Sans", 20), justify="left")
     ratingL.pack(side="top", anchor="w")
-    precioDiscount = ttk.Label(producto1, text="1", font=("Sans", 10), justify="left")
+    precioDiscount = ttk.Label(producto1, text="1", font=("Sans", 20), justify="left")
     precioDiscount.pack(side="top", anchor="w")
 
     #Frame 2/2
@@ -114,7 +114,7 @@ def main():
     dimencionesL.pack(side="top", anchor="w")
     minOrderL = ttk.Label(producto2, text="1", font=("Sans", 10), justify="left")
     minOrderL.pack(side="top", anchor="w")
-    skuL = ttk.Label(producto2, text="1", font=("Sans", 20), justify="left")
+    skuL = ttk.Label(producto2, text="1", font=("Sans", 30), justify="left")
     skuL.pack(side="top", anchor="w")
 
     siguiente = ttk.Button(text="Siguiente", command=siguienteP, padding=10)

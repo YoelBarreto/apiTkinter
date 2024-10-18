@@ -46,7 +46,7 @@ def cargar():
         imagenL.image = imagen_tk
 
         tituloL.config(text=product_list.products[indice].title)
-        categoryL.config(text=f"Categoria: #{product_list.products[indice].category}")
+        categoryL.config(text=f"Category: #{product_list.products[indice].category}")
         ratingL.config(text=f"Rating: {product_list.products[indice].rating}/5")
         precioDiscount.config(text=f"{product_list.products[indice].price}, (Discount: {product_list.products[indice].discountPercentage})")
         stockL.config(text=f"Stock: {product_list.products[indice].stock}")
@@ -56,9 +56,10 @@ def cargar():
         for line in descWrapped:
             desc += line + "\n"
         descripcionL.config(text=desc)
-        dimencionesL.config(text=f"Dimenciones: {product_list.products[indice].dimensions.width} / {product_list.products[indice].dimensions.height} / {product_list.products[indice].dimensions.depth}")
+        dimencionesL.config(text=f"Dimensions: {product_list.products[indice].dimensions.width} / {product_list.products[indice].dimensions.height} / {product_list.products[indice].dimensions.depth}")
         minOrderL.config(text=f"Minimum Order: {product_list.products[indice].minimumOrderQuantity}")
         skuL.config(text=f"#{product_list.products[indice].sku}")
+
 
 
 
@@ -93,7 +94,7 @@ def main():
     desc = tk.Frame(producto1)
     desc.pack(side="left", fill="x")
 
-    tituloL = ttk.Label(producto1, text="1", font=("Sans", 25), justify="left")
+    tituloL = ttk.Label(producto1, text="1", font=("Sans", 25, "bold"), justify="left")
     tituloL.pack(side="top", anchor="w")
     categoryL = ttk.Label(producto1, text="1", font=("Sans", 20), justify="left")
     categoryL.pack(side="top", anchor="w")
@@ -117,8 +118,8 @@ def main():
     skuL = ttk.Label(producto2, text="1", font=("Sans", 30), justify="left")
     skuL.pack(side="top", anchor="w")
 
-    siguiente = ttk.Button(text="Siguiente", command=siguienteP, padding=10)
-    siguiente.pack()
+    siguiente = ttk.Button(root, text="Siguiente", command=siguienteP, padding=10)
+    siguiente.pack(ipadx=20)
 
     cargar()
 

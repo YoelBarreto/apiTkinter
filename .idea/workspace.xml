@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Creada funcion main 50%/100%">
+    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Detalles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -116,7 +116,39 @@
       <option name="project" value="LOCAL" />
       <updated>1729169942012</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Removido intento de scrollbar, cambiado a funciones con indice a través de boton.">
+      <option name="closed" value="true" />
+      <created>1729239906622</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729239906622</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Arreglado funcionamiento indice y añadido 40% contenido">
+      <option name="closed" value="true" />
+      <created>1729241349567</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729241349567</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Añadido:&#10;+ imagen&#10;+ wrap descripcion&#10;+ informacion">
+      <option name="closed" value="true" />
+      <created>1729242711646</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729242711646</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Detalles">
+      <option name="closed" value="true" />
+      <created>1729242931474</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729242931474</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -124,6 +156,10 @@
     <MESSAGE value="Añadidas clases de los modulos + funcionamiento basico de la API" />
     <MESSAGE value="(No se para que es este)" />
     <MESSAGE value="Creada funcion main 50%/100%" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creada funcion main 50%/100%" />
+    <MESSAGE value="Removido intento de scrollbar, cambiado a funciones con indice a través de boton." />
+    <MESSAGE value="Arreglado funcionamiento indice y añadido 40% contenido" />
+    <MESSAGE value="Añadido:&#10;+ imagen&#10;+ wrap descripcion&#10;+ informacion" />
+    <MESSAGE value="Detalles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Detalles" />
   </component>
 </project>

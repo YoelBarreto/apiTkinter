@@ -1,8 +1,10 @@
 import requests
+from PIL.ImageOps import expand
+
 from models.APIResponse import APIResponse
 from dataclass_wizard import fromdict
 import tkinter as tk
-from shutil import which
+from textwrap import wrap
 from tkinter import ttk
 from PIL import Image, ImageTk
 
@@ -21,6 +23,7 @@ api_response = 0
 
 # product_list.products[indice].id
 
+imagenL = ""
 tituloL = ""
 categoryL = ""
 ratingL = ""
@@ -33,12 +36,30 @@ skuL = ""
 
 
 def cargar():
-    global indice, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL
+    global indice, imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL
     if indice < len(product_list.products):
+
+        bits_imagen = requests.get(product_list.products[indice].thumbnail, stream=True)
+        imagen = Image.open(bits_imagen.raw)
+        imagen_tk = ImageTk.PhotoImage(imagen)
+        imagenL.config(image=imagen_tk)
+        imagenL.image = imagen_tk
+
         tituloL.config(text=product_list.products[indice].title)
         categoryL.config(text=product_list.products[indice].category)
         ratingL.config(text=f"Rating: {product_list.products[indice].rating}")
         precioDiscount.config(text=f"{product_list.products[indice].price}, (Discount: {product_list.products[indice].discountPercentage})")
+        stockL.config(text=f"Stock: {product_list.products[indice].stock}")
+
+        descWrapped = wrap(product_list.products[indice].description, width=130)
+        desc = ""
+        for line in descWrapped:
+            desc += line + "\n"
+        descripcionL.config(text=desc)
+        dimencionesL.config(text=f"Dimenciones: {product_list.products[indice].dimensions.width} / {product_list.products[indice].dimensions.height} / {product_list.products[indice].dimensions.depth}")
+        minOrderL.config(text=f"Minimum Order: {product_list.products[indice].minimumOrderQuantity}")
+        skuL.config(text=f"#{product_list.products[indice].sku}")
+
 
 
 def siguienteP():
@@ -50,11 +71,11 @@ def siguienteP():
         indice = -1
 
 def main():
-    global tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL
+    global imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL
     # Pantalla
     root = tk.Tk()
     root.resizable(width=False, height=False)
-    root.geometry("900x400")
+    root.geometry("900x600")
     root.title("Productos")
     #Frame 1/2
     producto1 = tk.Frame(root, height=300)
@@ -63,6 +84,10 @@ def main():
     #Frame 1.5/2
     img = tk.Frame(producto1, width=200, height=200)
     img.pack(side="left")
+
+    imagenL = ttk.Label(img, text="loading...", width=200)
+    imagenL.pack(fill="both", expand=True)
+
 
     #Frame 2.0/0
     desc = tk.Frame(producto1)

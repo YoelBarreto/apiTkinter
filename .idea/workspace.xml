@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Añadido boton &quot;Volver&quot;(Funcional) + intento de buscado (No funcional)">
+    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Actualizado el buscador(Funcional) + cambio en sistema de avanzar o regresar entre productos.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729681775261</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Actualizado el buscador(Funcional) + cambio en sistema de avanzar o regresar entre productos.">
+      <option name="closed" value="true" />
+      <created>1729686173448</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729686173448</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,6 +194,7 @@
     <MESSAGE value="Detalles x2" />
     <MESSAGE value="Añadido barra de busqueda (Incompleta)" />
     <MESSAGE value="Añadido boton &quot;Volver&quot;(Funcional) + intento de buscado (No funcional)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido boton &quot;Volver&quot;(Funcional) + intento de buscado (No funcional)" />
+    <MESSAGE value="Actualizado el buscador(Funcional) + cambio en sistema de avanzar o regresar entre productos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizado el buscador(Funcional) + cambio en sistema de avanzar o regresar entre productos." />
   </component>
 </project>

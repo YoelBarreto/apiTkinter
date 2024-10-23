@@ -8,33 +8,24 @@ from textwrap import wrap
 from tkinter import ttk
 from PIL import Image, ImageTk
 
+# Funcionamiento del response de la API
 response = requests.get("https://dummyjson.com/products")
 data_dict = response.json()
 product_list = fromdict(APIResponse, data_dict)
+data = response.json()
+api_response = 0
 
+# Creación del indice en el primer valor del elemento al iniciar el programa
+indice = 0
 
+# (TEMPORAL) guia del uso del APIresponse
 # for product in product_list.products:
 #     print(product.title)
 #     print(product.description)
 
-indice = 0
-data = response.json()
-api_response = 0
-
 # product_list.products[indice].id
 
-imagenL = ""
-tituloL = ""
-categoryL = ""
-ratingL = ""
-precioDiscount = ""
-stockL = ""
-descripcionL = ""
-dimencionesL = ""
-minOrderL = ""
-skuL = ""
-
-
+# Pantalla de carga de la pantalla principal por indices
 def cargar():
     global indice, imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL, buscador, buscar
     if indice < len(product_list.products):
@@ -61,6 +52,7 @@ def cargar():
         skuL.config(text=f"#{product_list.products[indice].sku}")
 
 
+# Funcionamiento de la busqueda de los productos
 def buscarP():
     global buscador, indice
     texto = buscador.get().lower()
@@ -70,7 +62,7 @@ def buscarP():
             cargar()
             break
 
-
+#Boton de avanzar el producto de la pantalla principal
 def siguienteP():
     global indice, contador
     print(indice)
@@ -80,6 +72,7 @@ def siguienteP():
     else:
         indice = -1
 
+#Boton de regresar el producto de la pantalla principal
 def volverP():
     global indice
     print(indice)
@@ -89,6 +82,7 @@ def volverP():
     else:
         indice = len(product_list.products) - 1
 
+# Creador de pantalla principal
 def main():
     global imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL, buscador, buscar
     # Pantalla

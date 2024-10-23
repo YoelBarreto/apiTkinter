@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Detalles x2">
+    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Añadido barra de busqueda (Incompleta)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -156,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729254177205</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Añadido barra de busqueda (Incompleta)">
+      <option name="closed" value="true" />
+      <created>1729680349835</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729680349835</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -169,6 +177,7 @@
     <MESSAGE value="Añadido:&#10;+ imagen&#10;+ wrap descripcion&#10;+ informacion" />
     <MESSAGE value="Detalles" />
     <MESSAGE value="Detalles x2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Detalles x2" />
+    <MESSAGE value="Añadido barra de busqueda (Incompleta)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadido barra de busqueda (Incompleta)" />
   </component>
 </project>

@@ -23,6 +23,7 @@ api_response = 0
 
 # product_list.products[indice].id
 
+print(product_list.products)
 imagenL = ""
 tituloL = ""
 categoryL = ""
@@ -61,8 +62,15 @@ def cargar():
         skuL.config(text=f"#{product_list.products[indice].sku}")
 
 def buscarP():
-    global buscador, buscar
-
+    global buscador, indice
+    texto = buscador.get()
+    if texto == product_list.products:
+        indice = product_list.products.index()
+        print("Si")
+        cargar()
+    else:
+        buscador.config(text="No existe")
+        print("No")
 
 
 def siguienteP():
@@ -73,12 +81,20 @@ def siguienteP():
     else:
         indice = -1
 
+def volverP():
+    global indice
+    indice -= 1
+    if indice > 0:
+        indice = +1
+    else:
+        cargar()
+
 def main():
     global imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL, buscador, buscar
     # Pantalla
     root = tk.Tk()
     root.resizable(width=False, height=False)
-    root.geometry("900x600")
+    root.geometry("900x700")
     root.title("Productos")
 
     #Buscador
@@ -127,6 +143,8 @@ def main():
     skuL = ttk.Label(producto2, text="1", font=("Sans", 30), justify="left")
     skuL.pack(side="top", anchor="w")
 
+    atras = ttk.Button(root, text="Volver", command=volverP, padding=10)
+    atras.pack(ipadx=20)
     siguiente = ttk.Button(root, text="Siguiente", command=siguienteP, padding=10)
     siguiente.pack(ipadx=20)
 

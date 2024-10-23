@@ -36,7 +36,7 @@ skuL = ""
 
 
 def cargar():
-    global indice, imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL
+    global indice, imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL, buscador, buscar
     if indice < len(product_list.products):
 
         bits_imagen = requests.get(product_list.products[indice].thumbnail, stream=True)
@@ -60,6 +60,8 @@ def cargar():
         minOrderL.config(text=f"Minimum Order: {product_list.products[indice].minimumOrderQuantity}")
         skuL.config(text=f"#{product_list.products[indice].sku}")
 
+def buscarP():
+    global buscador, buscar
 
 
 
@@ -72,12 +74,19 @@ def siguienteP():
         indice = -1
 
 def main():
-    global imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL
+    global imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL, buscador, buscar
     # Pantalla
     root = tk.Tk()
     root.resizable(width=False, height=False)
     root.geometry("900x600")
     root.title("Productos")
+
+    #Buscador
+    buscador = ttk.Entry(width=35)
+    buscador.pack(pady=15)
+    buscar = ttk.Button(text="Buscar", command=buscarP)
+    buscar.pack()
+
     #Frame 1/2
     producto1 = tk.Frame(root, height=300)
     producto1.pack(side="top", fill="x", expand=True)

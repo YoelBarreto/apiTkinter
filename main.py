@@ -23,7 +23,6 @@ api_response = 0
 
 # product_list.products[indice].id
 
-print(product_list.products)
 imagenL = ""
 tituloL = ""
 categoryL = ""
@@ -61,20 +60,20 @@ def cargar():
         minOrderL.config(text=f"Minimum Order: {product_list.products[indice].minimumOrderQuantity}")
         skuL.config(text=f"#{product_list.products[indice].sku}")
 
+
 def buscarP():
     global buscador, indice
-    texto = buscador.get()
-    if texto == product_list.products:
-        indice = product_list.products.index()
-        print("Si")
-        cargar()
-    else:
-        buscador.config(text="No existe")
-        print("No")
+    texto = buscador.get().lower()
+    for i in range(len(product_list.products)):
+        if texto in product_list.products[i].title.lower():
+            indice = i
+            cargar()
+            break
 
 
 def siguienteP():
-    global indice
+    global indice, contador
+    print(indice)
     indice += 1
     if indice < len(product_list.products):
         cargar()
@@ -83,11 +82,12 @@ def siguienteP():
 
 def volverP():
     global indice
+    print(indice)
     indice -= 1
-    if indice > 0:
-        indice = +1
-    else:
+    if indice < len(product_list.products):
         cargar()
+    else:
+        indice = len(product_list.products) - 1
 
 def main():
     global imagenL, tituloL, categoryL, ratingL, precioDiscount, stockL, descripcionL, dimencionesL, minOrderL, skuL, buscador, buscar

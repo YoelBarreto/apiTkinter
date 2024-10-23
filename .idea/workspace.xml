@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Añadido barra de busqueda (Incompleta)">
+    <list default="true" id="679e058a-8edf-4c5f-8348-35ffd3400526" name="Changes" comment="Añadido boton &quot;Volver&quot;(Funcional) + intento de buscado (No funcional)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -164,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729680349835</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Añadido boton &quot;Volver&quot;(Funcional) + intento de buscado (No funcional)">
+      <option name="closed" value="true" />
+      <created>1729681775261</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729681775261</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -178,6 +186,7 @@
     <MESSAGE value="Detalles" />
     <MESSAGE value="Detalles x2" />
     <MESSAGE value="Añadido barra de busqueda (Incompleta)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido barra de busqueda (Incompleta)" />
+    <MESSAGE value="Añadido boton &quot;Volver&quot;(Funcional) + intento de buscado (No funcional)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadido boton &quot;Volver&quot;(Funcional) + intento de buscado (No funcional)" />
   </component>
 </project>

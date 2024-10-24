@@ -58,8 +58,9 @@ def listaResultados():
     pantalla_resultados = tk.Tk()
     pantalla_resultados.title("Listado")
 
-    listado = ttk.Label(pantalla_resultados, text=str(lista_resultados))
-    listado.pack()
+    for resultado in lista_resultados:
+        listado = ttk.Label(pantalla_resultados, text=str(resultado))
+        listado.pack()
 
 # Funcionamiento de la busqueda de los productos
 def buscarP():

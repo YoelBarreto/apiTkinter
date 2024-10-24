@@ -17,6 +17,7 @@ api_response = 0
 
 # Creación del indice en el primer valor del elemento al iniciar el programa
 indice = 0
+lista_resultados = []
 
 # (TEMPORAL) guia del uso del APIresponse
 # for product in product_list.products:
@@ -51,16 +52,25 @@ def cargar():
         minOrderL.config(text=f"Minimum Order: {product_list.products[indice].minimumOrderQuantity}")
         skuL.config(text=f"#{product_list.products[indice].sku}")
 
+def listaResultados():
+    global lista_resultados
+
+    pantalla_resultados = tk.Tk()
+    pantalla_resultados.title("Listado")
+
+    listado = ttk.Label(pantalla_resultados, text=str(lista_resultados))
+    listado.pack()
 
 # Funcionamiento de la busqueda de los productos
 def buscarP():
-    global buscador, indice
+    global buscador, lista_resultados
     texto = buscador.get().lower()
     for i in range(len(product_list.products)):
         if texto in product_list.products[i].title.lower():
-            indice = i
-            cargar()
-            break
+            lista_resultados.append(product_list.products[i].title)
+
+    listaResultados()
+
 
 #Boton de avanzar el producto de la pantalla principal
 def siguienteP():
@@ -117,9 +127,9 @@ def main():
     tituloL.pack(side="top", anchor="w")
     categoryL = ttk.Label(producto1, text="1", font=("Sans", 20), justify="left")
     categoryL.pack(side="top", anchor="w")
-    ratingL = ttk.Label(producto1, text="1", font=("Sans", 20), justify="left")
+    ratingL = ttk.Label(producto1, text="1", font=("Sans", 22), justify="left")
     ratingL.pack(side="top", anchor="w")
-    precioDiscount = ttk.Label(producto1, text="1", font=("Sans", 20), justify="left")
+    precioDiscount = ttk.Label(producto1, text="1", font=("Sans", 20, "bold"), justify="left")
     precioDiscount.pack(side="top", anchor="w")
 
     #Frame 2/2

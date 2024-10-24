@@ -57,10 +57,12 @@ def listaResultados():
 
     pantalla_resultados = tk.Tk()
     pantalla_resultados.title("Listado")
-
+    lista_resultados.sort()
     for resultado in lista_resultados:
         listado = ttk.Label(pantalla_resultados, text=str(resultado))
         listado.pack()
+    generarpdf = ttk.Button(pantalla_resultados, text="Generar PDF")
+    generarpdf.pack(pady=10)
 
 # Funcionamiento de la busqueda de los productos
 def buscarP():

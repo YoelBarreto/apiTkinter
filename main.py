@@ -1,6 +1,10 @@
+from typing import List
+
 import requests
 from PIL.ImageOps import expand
 
+from models.empresa import Empresa
+from models.product import Product
 from models.APIResponse import APIResponse
 from dataclass_wizard import fromdict
 import tkinter as tk
@@ -54,45 +58,50 @@ def cargar():
         minOrderL.config(text=f"Minimum Order: {product_list.products[indice].minimumOrderQuantity}")
         skuL.config(text=f"#{product_list.products[indice].sku}")
 
-# def generar_pdf(productos: List[Product]):
-#     empresa: Empresa = Empresa(
-#         nombre="Alvarikola Soft S.L",
-#         titular="Añvarotinga",
-#         cif="A12378712F",
-#         direccion="Calle Bobo",
-#         email="holabobo.dev"
-#     )
-#     # GENERO PDF (nombre=busqueda_resultado_202410241345.pdf
-#     alert.showinfo("PDF Generado", "Se ha generado el PDF correctamente en la ruta /pdfs")
+def generar_pdf(productos: List[Product]):
+    empresa: Empresa = Empresa(
+        nombre="Alvarikola Soft S.L",
+        titular="Añvarotinga",
+        cif="A12378712F",
+        direccion="Calle Bobo",
+        email="holabobo.dev"
+    )
+    # GENERO PDF (nombre=busqueda_resultado_202410241345.pdf
+    alert.showinfo("PDF Generado", "Se ha generado el PDF correctamente en la ruta /pdfs")
 
-def listaResultados():
-    global lista_resultados
+    contenidoPDF = """
+    <html>
+        <head>
+            <meta charset='UTF-8'>
+        <head>
+        
+    """
+    indice = 0
+    for producto in productos:
+        indice += 1
 
+
+# Funcionamiento de la busqueda de los productos
+def buscarP():
+    global buscador
+    texto = buscador.get().lower()
+    lista_resultados = list(filter(lambda producto: texto in producto.title.lower(), product_list.products))
+    lista_resultados.sort(key=lambda producto: producto.title)
+    listaResultados(lista_resultados)
+
+def listaResultados(productos: List[Product]):
     pantalla_resultados = tk.Tk()
     pantalla_resultados.configure(bg=background)
     pantalla_resultados.title("Listado")
 
-    titulo = ttk.Label(pantalla_resultados, text="Productos encontrados", font=("Sans", 20, "bold"))
-    titulo.pack
-
-    lista_resultados.sort()
-    for resultado in lista_resultados:
-        listado = ttk.Label(pantalla_resultados, text=str(resultado))
+    ttk.Label(pantalla_resultados, text="Productos encontrados", font=("Sans", 20, "bold"))
+    for producto in productos:
+        listado = ttk.Label(pantalla_resultados, text=str(producto.title))
         listado.configure(background=background)
         listado.pack()
-    generarpdf = ttk.Button(pantalla_resultados, text="Generar PDF")
+
+    generarpdf = ttk.Button(pantalla_resultados, text="Generar PDF", command=lambda: generar_pdf(productos))
     generarpdf.pack(pady=10)
-
-# Funcionamiento de la busqueda de los productos
-def buscarP():
-    global buscador, lista_resultados
-    texto = buscador.get().lower()
-    for i in range(len(product_list.products)):
-        if texto in product_list.products[i].title.lower():
-            lista_resultados.append(product_list.products[i].title)
-
-    listaResultados()
-
 
 #Boton de avanzar el producto de la pantalla principal
 def siguienteP():
